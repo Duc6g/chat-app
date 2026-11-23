@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - Giống Zalo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Hộp thoại nhập tên -->
+        <div id="login-box" class="login-box">
+            <h2>👋 Chào mừng đến với ChatApp</h2>
+            <input type="text" id="username-input" placeholder="Nhập tên của bạn..." required>
+            <button id="join-btn">Tham gia</button>
+        </div>
+
+        <!-- Giao diện Chat -->
+        <div id="chat-container" class="chat-container hidden">
+            <!-- Sidebar danh sách bạn bè -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Danh sách online</h3>
+                </div>
+                <div id="user-list" class="user-list">
+                    <p class="no-user">Đang tải...</p>
+                </div>
+            </div>
+
+            <!-- Khu vực chat chính -->
+            <div class="chat-main">
+                <div class="chat-header">
+                    <h3>💬 Phòng chat chung</h3>
+                </div>
+                <div id="messages" class="messages">
+                    <!-- Tin nhắn sẽ hiển thị ở đây -->
+                </div>
+                <form id="message-form" class="message-form">
+                    <input type="text" id="message-input" placeholder="Nhập tin nhắn..." autocomplete="off">
+                    <button type="submit">Gửi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
